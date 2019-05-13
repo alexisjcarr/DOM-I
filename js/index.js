@@ -55,6 +55,22 @@ navEls[3].textContent = siteContent.nav["nav-item-4"];
 navEls[4].textContent = siteContent.nav["nav-item-5"];
 navEls[5].textContent = siteContent.nav["nav-item-6"];
 
+const navBar = document.querySelector(".container header nav"); // Task 3
+console.log(typeof navBar)
+const newNavA = document.createElement('a');
+newNavA.textContent = 'Hello World!';
+newNavA.style.color = 'green';
+navBar.appendChild(newNavA);
+
+const newNavB = document.createElement('a'); // Task 3
+newNavB.textContent = 'No';
+newNavB.style.color = 'green';
+navBar.prepend(newNavB, navBar.firstChild);
+
+navEls.forEach(navEl => {  // Task 3
+  navEl.style.color = "green";
+});
+
 // CTA
 let header_ = document.querySelector(".cta .cta-text h1");
 header_.innerHTML = siteContent.cta.h1;
@@ -138,3 +154,4 @@ contactCont[2].innerHTML = siteContent.contact.email;
 /* Footer */
 let footer_ = document.querySelector('footer');
 footer_.innerHTML = siteContent.footer.copyright;
+
