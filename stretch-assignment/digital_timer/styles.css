@@ -1,7 +1,16 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+button {
+  border: 3px solid gray;
+  background-color: aliceblue;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .digits {
@@ -12,4 +21,17 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.pulse {
+  animation: pulse 0.95s 7;
+}
+
+@keyframes pulse {
+  0% {
+    color: #400000;
+  }
+  100% {
+    color: red; 
+  }
 }

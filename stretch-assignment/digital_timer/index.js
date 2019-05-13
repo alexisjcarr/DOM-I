@@ -5,6 +5,10 @@ function timer() {
   let timer = setInterval(function() {
     milliseconds += 10;
     seconds = Math.floor(milliseconds / 1000);
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector(".digits").classList.remove("pulse");
+    document.querySelector('.digits').classList.remove('redDigit');
+    document.querySelector('button').innerHTML = 'Start Timer';
 
     (milliseconds % 1000) / 10 < 10
       ? (document.querySelector(
@@ -14,12 +18,20 @@ function timer() {
           ".digits"
         ).innerHTML = `<h1>0${seconds}:${(milliseconds % 1000) / 10}</h1>`);
 
+    if(seconds >= 7) {
+      document.querySelector('.digits').classList.add('redDigit');
+      document.querySelector(".digits").classList.add("pulse");
+      document.querySelector('body').style.backgroundColor = 'black';
+    }
+
     if (seconds === 10) {
       document.querySelector(
         ".digits"
       ).innerHTML = `<h1>${seconds}:0${(milliseconds % 1000) / 10}</h1>`;
 
-      document.querySelector(".digits").classList.add("redDigit");
+      document.querySelector('button').innerHTML = 'Restart';
+
+      // document.querySelector(".digits").classList.add("redDigit");
 
       clearInterval(timer);
     }
