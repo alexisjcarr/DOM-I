@@ -1,9 +1,12 @@
 function timer() {
+  const alarm = new Audio('analog-watch-alarm_daniel-simion.mp3');
+  const beep = new Audio('Beep-SoundBible.com-923660219.mp3');
+
   let seconds = 0;
   let milliseconds = 0;
-  const alarm = new Audio('analog-watch-alarm_daniel-simion.mp3')
 
   let timer = setInterval(function() {
+    
     milliseconds += 10;
     seconds = Math.floor(milliseconds / 1000);
 
@@ -41,7 +44,10 @@ function timer() {
       document.querySelector("button").innerHTML = "Restart";
       document.querySelector("button").disabled = false;
       clearInterval(timer);
-      alarm.play();
-    }
+      
+      beep.play();
+    } 
   }, 10);
 }
+
+

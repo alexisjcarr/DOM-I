@@ -24,7 +24,7 @@ button {
 }
 
 .pulse {
-  animation: pulse 0.95s 16;
+  animation: pulse 0.95s 6;
 }
 
 @keyframes pulse {
