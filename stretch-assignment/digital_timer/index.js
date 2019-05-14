@@ -1,6 +1,7 @@
 function timer() {
   let seconds = 0;
   let milliseconds = 0;
+  const alarm = new Audio('analog-watch-alarm_daniel-simion.mp3')
 
   let timer = setInterval(function() {
     milliseconds += 10;
@@ -40,6 +41,7 @@ function timer() {
       document.querySelector("button").innerHTML = "Restart";
       document.querySelector("button").disabled = false;
       clearInterval(timer);
+      alarm.play();
     }
   }, 10);
 }
