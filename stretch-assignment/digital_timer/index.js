@@ -6,11 +6,14 @@ function timer() {
     milliseconds += 10;
     seconds = Math.floor(milliseconds / 1000);
 
+    // disable button
+    document.querySelector("button").disabled = true;
+
     // resetting stuff from the last timer run
-    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector("body").style.backgroundColor = "white";
     document.querySelector(".digits").classList.remove("pulse");
-    document.querySelector('.digits').classList.remove('redDigit');
-    document.querySelector('button').innerHTML = 'Start Timer';
+    document.querySelector(".digits").classList.remove("redDigit");
+    document.querySelector("button").innerHTML = "Start Timer";
 
     // timer formatting
     (milliseconds % 1000) / 10 < 10
@@ -22,10 +25,10 @@ function timer() {
         ).innerHTML = `<h1>0${seconds}:${(milliseconds % 1000) / 10}</h1>`);
 
     // time running out formatting
-    if(seconds >= 7) {
-      document.querySelector('.digits').classList.add('redDigit');
+    if (seconds >= 7) {
+      document.querySelector(".digits").classList.add("redDigit");
       document.querySelector(".digits").classList.add("pulse");
-      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector("body").style.backgroundColor = "black";
     }
 
     // end of time interval formatting
@@ -34,7 +37,8 @@ function timer() {
         ".digits"
       ).innerHTML = `<h1>${seconds}:0${(milliseconds % 1000) / 10}</h1>`;
 
-      document.querySelector('button').innerHTML = 'Restart';
+      document.querySelector("button").innerHTML = "Restart";
+      document.querySelector("button").disabled = false;
       clearInterval(timer);
     }
   }, 10);
